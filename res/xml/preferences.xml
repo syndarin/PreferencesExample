@@ -28,5 +28,12 @@
             android:key="welcomeMessage"
             android:summary="Define welcome message"
             android:title="Welcome Message" />
+        <ListPreference
+            android:defaultValue="red"
+            android:entries="@array/colorsTitle"
+            android:entryValues="@array/colorsValues"
+            android:key="backColor"
+            android:summary="Choose your favourite color"
+            android:title="Background color" />
     </PreferenceCategory>
 </PreferenceScreen>

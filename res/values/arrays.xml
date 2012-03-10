@@ -14,4 +14,14 @@
         <item name="60000">60000</item>
         <item name="300000">300000</item>
     </string-array>
+    <string-array name="colorsTitle">
+        <item name="red">Red</item>
+        <item name="green">Green</item>
+        <item name="blue">Blue</item>
+    </string-array>
+    <string-array name="colorsValues">
+        <item name="red">#99FF0000</item>
+        <item name="green">#9900FF00</item>
+        <item name="blue">#990000FF</item>
+    </string-array>
 </resources>

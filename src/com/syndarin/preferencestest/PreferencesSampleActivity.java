@@ -3,15 +3,18 @@ package com.syndarin.preferencestest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class PreferencesSampleActivity extends Activity {
     /** Called when the activity is first created. */
 	
 	Button buttonSettings;
+	LinearLayout rootLayout;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class PreferencesSampleActivity extends Activity {
         setContentView(R.layout.main);
         buttonSettings=(Button)findViewById(R.id.buttonSettings);
         buttonSettings.setOnClickListener(new ButtonHandler());
+        rootLayout=(LinearLayout)findViewById(R.id.rootLayout);
     }
     
     
@@ -30,6 +34,14 @@ public class PreferencesSampleActivity extends Activity {
 		SharedPreferences appSettings=PreferenceManager.getDefaultSharedPreferences(this);
 		String welcomeMessage=appSettings.getString("welcomeMessage", "none");
 		buttonSettings.setText(welcomeMessage);
+		String color=appSettings.getString("backColor", null);
+		if(color!=null){
+			int backColor=Color.parseColor(color);
+			rootLayout.setBackgroundColor(backColor);
+		}else{
+			rootLayout.setBackgroundColor(Color.BLACK);
+		}
+
 	}
 
 
